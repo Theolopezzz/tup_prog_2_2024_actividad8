@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Ej_8._1
 {
@@ -15,6 +16,13 @@ namespace Ej_8._1
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void bVerCuentas_Click(object sender, EventArgs e)
+        {
+            FileStream fs = new FileStream()   
+            StreamReader sr = null; 
+
         }
     }
 }
