@@ -8,7 +8,7 @@ namespace Ej_8._1.Models
 {
     internal class Cuenta:IComparable
     {
-        Persona Titular;
+        public Persona Titular;
         public int Numero;
         public double Saldo;
         public DateTime fecha; 

@@ -33,7 +33,8 @@
             this.bExportarCuentas = new System.Windows.Forms.Button();
             this.bResguardar = new System.Windows.Forms.Button();
             this.bRestaurar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tBMostrar = new System.Windows.Forms.TextBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.SuspendLayout();
             // 
             // bVerCuentas
@@ -54,6 +55,7 @@
             this.bImportarCuentas.TabIndex = 1;
             this.bImportarCuentas.Text = "2- Importar Cuentas";
             this.bImportarCuentas.UseVisualStyleBackColor = true;
+            this.bImportarCuentas.Click += new System.EventHandler(this.bImportarCuentas_Click);
             // 
             // bExportarCuentas
             // 
@@ -82,21 +84,25 @@
             this.bRestaurar.Text = "5- Restaurar (Restore)";
             this.bRestaurar.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // tBMostrar
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox1.Size = new System.Drawing.Size(461, 303);
-            this.textBox1.TabIndex = 5;
+            this.tBMostrar.Location = new System.Drawing.Point(12, 12);
+            this.tBMostrar.Multiline = true;
+            this.tBMostrar.Name = "tBMostrar";
+            this.tBMostrar.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tBMostrar.Size = new System.Drawing.Size(461, 303);
+            this.tBMostrar.TabIndex = 5;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(643, 328);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tBMostrar);
             this.Controls.Add(this.bRestaurar);
             this.Controls.Add(this.bResguardar);
             this.Controls.Add(this.bExportarCuentas);
@@ -116,7 +122,8 @@
         private System.Windows.Forms.Button bExportarCuentas;
         private System.Windows.Forms.Button bResguardar;
         private System.Windows.Forms.Button bRestaurar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tBMostrar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

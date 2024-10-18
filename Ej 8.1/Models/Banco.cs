@@ -10,23 +10,34 @@ namespace Ej_8._1.Models
     {
         List<Cuenta> cuentas = new List<Cuenta>();
         List<Persona> clientes = new List<Persona>();   
-        public int CantidadClientes;
-        public int CantidadCuentas;
-        public Cuenta this[int idx]
+        public int CantidadClientes { get { return clientes.Count; } }
+        public int CantidadCuentas { get { return cuentas.Count; } }
+        public Cuenta VerCuenta(int idx)
         {
-            get 
-            {
-                if(idx>0 && idx <cuentas.Count)
-                    return cuentas[idx];
-                return null;
-            }
+            if(idx>0 && idx <cuentas.Count)
+                return cuentas[idx];
+            return null;
+        }
+        public Persona VerCliente(int idx)
+        {
+            if (idx > 0 && idx < clientes.Count)
+                return clientes[idx];
+            return null;
         }
         public Cuenta AgregarCuenta (int numeroCuenta, int dni, string nombre)
         {
-            Persona persona = new Persona (dni, nombre);    
-            clientes.Add (persona);
-            Cuenta cuenta = new Cuenta(numeroCuenta, persona);
-            cuentas.Add (cuenta);
+            Persona persona = VerClientePorDNI(dni);
+            if (persona==null)
+            {
+                persona = new Persona(dni, nombre);
+                clientes.Add(persona);
+            }
+            Cuenta cuenta = VerCuentaPorNumero(numeroCuenta);
+            if(cuenta == null)
+            {
+                cuenta = new Cuenta(numeroCuenta, persona);
+                cuentas.Add(cuenta);
+            }
             return cuenta;
         }
         public Cuenta VerCuentaPorNumero(int numeroCuenta)
